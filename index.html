@@ -18,6 +18,7 @@
             <form id="preferencesForm">
                 <label for="activity">Atividade Preferida:</label>
                 <select id="activity" name="activity" onchange="toggleFoodOptions()">
+                    <option value="">Selecione uma atividade</option>
                     <option value="jantar">Jantar</option>
                     <option value="boliche">Boliche</option>
                     <option value="cafe">Café</option>
@@ -29,6 +30,7 @@
                 <div id="foodContainer" style="display:none;">
                     <label for="food">Comida Preferida:</label>
                     <select id="food" name="food" onchange="toggleLocationOptions()">
+                        <option value="">Selecione um tipo de comida</option>
                         <option value="italiana">Italiana</option>
                         <option value="japonesa">Japonesa</option>
                     </select>
@@ -36,13 +38,15 @@
 
                 <div id="locationContainer" style="display:none;">
                     <label for="location">Local Preferido:</label>
-                    <select id="location" name="location"></select>
+                    <select id="location" name="location">
+                        <option value="">Selecione um local</option>
+                    </select>
                 </div>
 
                 <button type="button" onclick="generateInvitation()">Gerar Convite</button>
             </form>
         </div>
-        <div id="invitation" class="hidden">
+        <div id="invitation" style="display:none;">
             <h2>Resultado</h2>
             <p id="invitationText"></p>
             <button id="surpriseOption" onclick="showSurpriseOptions()" style="display:none;">Não gostei do resultado - opção surpresa</button>
