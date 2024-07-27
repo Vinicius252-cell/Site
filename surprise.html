@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opção Surpresa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Escolha uma opção surpresa</h1>
+        <div id="selectedOption">
+            <img src="tulipas.jpg" alt="Tulipas" onclick="selectSurprise('tulipas')" style="cursor:pointer; width:45%; margin-right:5%;">
+            <img src="girassois.jpg" alt="Girassóis" onclick="selectSurprise('girassois')" style="cursor:pointer; width:45%;">
+        </div>
+        <div id="invitationDetails" style="display:none;">
+            <h2>Seu Convite Surpresa</h2>
+            <p id="invitationText"></p>
+        </div>
+    </div>
+    <script>
+        function selectSurprise(option) {
+            var invitationText = "";
+        
+            if (option === 'tulipas') {
+                invitationText = "Ótima escolha! Esse item representa convite para um jantar no Barolo, na sexta-feira à noite. Com base na escolha, pensei no seguinte programa: Entrada - bruschettas de tomate, Principal - Um Filé à JK e pra fechar, uma torta holandesa.";
+            } else if (option === 'girassois') {
+                invitationText = "Bora ir no Satoshi, sexta à noite para saborear os diferentes niguiris e quem sabe experimentar uma saquêrinha?";
+            }
+        
+            document.getElementById("selectedOption").style.display = "none";
+            document.getElementById("invitationDetails").style.display = "block";
+            document.getElementById("invitationText").innerText = invitationText;
+        }
+    </script>
+</body>
+</html>

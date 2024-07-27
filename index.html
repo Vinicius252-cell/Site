@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="welcomeMessage">
+            <h1>Oi Kívia! 😉</h1>
+            <p>Já que você é superorganizada e gosta de fazer planos, eu pensei que poderia usar das suas habilidades para planejar uma coisa....</p>
+            <button onclick="showPreferences()">Iniciar</button>
+        </div>
+        <div id="preferencesSection" style="display: none;">
+            <h1>Insira Suas Preferências</h1>
+            <form id="preferencesForm">
+                <label for="activity">Atividade Preferida:</label>
+                <select id="activity" name="activity" onchange="toggleFoodOptions()">
+                    <option value="jantar">Jantar</option>
+                    <option value="boliche">Boliche</option>
+                    <option value="cafe">Café</option>
+                </select>
+
+                <label for="datetime">Data e Horário:</label>
+                <input type="datetime-local" id="datetime" name="datetime" min="2024-07-31T00:00" max="2024-08-02T23:59" required>
+
+                <div id="foodContainer" style="display:none;">
+                    <label for="food">Comida Preferida:</label>
+                    <select id="food" name="food" onchange="toggleLocationOptions()">
+                        <option value="italiana">Italiana</option>
+                        <option value="japonesa">Japonesa</option>
+                    </select>
+                </div>
+
+                <div id="locationContainer" style="display:none;">
+                    <label for="location">Local Preferido:</label>
+                    <select id="location" name="location"></select>
+                </div>
+
+                <button type="button" onclick="generateInvitation()">Gerar Convite</button>
+            </form>
+        </div>
+        <div id="invitation" class="hidden">
+            <h2>Resultado</h2>
+            <p id="invitationText"></p>
+            <button id="surpriseOption" onclick="showSurpriseOptions()" style="display:none;">Não gostei do resultado - opção surpresa</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
